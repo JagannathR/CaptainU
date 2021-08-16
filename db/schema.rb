@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_14_172956) do
+ActiveRecord::Schema.define(version: 2021_08_16_090734) do
 
   create_table "api_v1_players", charset: "utf8mb3", force: :cascade do |t|
     t.string "first_name"
@@ -21,6 +21,30 @@ ActiveRecord::Schema.define(version: 2021_08_14_172956) do
     t.integer "graduation_year"
     t.string "position"
     t.boolean "recruit"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "api_v1_teams", charset: "utf8mb3", force: :cascade do |t|
+    t.string "name"
+    t.string "age_group"
+    t.string "coach"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "api_v1_tournaments", charset: "utf8mb3", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "city", null: false
+    t.string "state", limit: 2, null: false
+    t.date "start_date", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "api_v1_users", charset: "utf8mb3", force: :cascade do |t|
+    t.string "email"
+    t.string "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
